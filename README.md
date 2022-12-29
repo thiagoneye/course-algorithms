@@ -4,8 +4,8 @@ Algorithms studies from the YouTube.
 
 All files were based on the course from the cited website.
 
-- [Jovian](https://jovian.ai/learn/data-structures-and-algorithms-in-python).
-- [YouTube](https://youtu.be/pkYVOmU3MgA).
+- [Jovian](https://jovian.ai/learn/data-structures-and-algorithms-in-python)
+- [YouTube](https://youtu.be/pkYVOmU3MgA)
 - [FreeCodeCamp](https://www.freecodecamp.org/news/learn-algorithms-and-data-structures-in-python/)
 
 ## Contents
