@@ -56,8 +56,11 @@ if __name__ == '__main__':
 
     # Insert Users
     treemap['aakash'] = aakash
+    treemap['biraj'] = biraj
+    treemap['hemanth'] = hemanth
     treemap['jadhesh'] = jadhesh
+    treemap['siddhant'] = siddhant
     treemap['sonaksh'] = sonaksh
-    treemap.display()
+    treemap['vishal'] = vishal
 
-    print(treemap.root)
+    treemap.display()
