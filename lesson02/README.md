@@ -11,3 +11,5 @@ Development of fast in-memory data structure to manage profile information (user
 
 1. Linear Insert/Search (Brute Force)
 2. Binary Tree
+3. Binary Search Tree
+4. TreeMap

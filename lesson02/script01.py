@@ -52,13 +52,13 @@ if __name__ == '__main__':
 
     # Create users
 
+    aakash = User('aakash', 'Aakash Rai', 'aakash@example.com')
     biraj = User('biraj', 'Biraj Das', 'biraj@example.com')
-    vishal = User('vishal', 'Vishal Goel', 'vishal@example.com')
     hemanth = User('hemanth', 'Hemanth Jain', 'hemanth@example.com')
-    sonaksh = User('sonaksh', 'Sonaksh Kumar', 'sonaksh@example.com')
     jadhesh = User('jadhesh', 'Jadhesh Verma', 'jadhesh@example.com')
     siddhant = User('siddhant', 'Siddhant Sinha', 'siddhant@example.com')
-    aakash = User('aakash', 'Aakash Rai', 'aakash@example.com')
+    sonaksh = User('sonaksh', 'Sonaksh Kumar', 'sonaksh@example.com')    
+    vishal = User('vishal', 'Vishal Goel', 'vishal@example.com')
 
     # Create database
 
