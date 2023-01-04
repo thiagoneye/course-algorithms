@@ -8,85 +8,81 @@ MAX_HASH_TABLE_SIZE = 4098
 
 # Classes
 
-class HashTable:
-    def __init__(self):
-        pass
+class BasicHashTable:
+    def __init__(self, max_size=MAX_HASH_TABLE_SIZE):
+        self.data_list = max_size*[None]
 
     def insert(self, key, value):
         """
         Insert a new key-value pair.
         """
-        pass
+        idx = BasicHashTable.get_index(self.data_list, key)
+        self.data_list[idx] = (key, value)
 
     def find(self, key):
         """
         Find the value associated with a key.
         """
-        pass
+        idx = BasicHashTable.get_index(self.data_list, key)
+        key_value = self.data_list[idx]
+
+        if key_value is None:
+            return None
+        else:
+            key, value = key_value
+            return value
 
     def update(self, key, value):
         """
         Change the value associated with a key.
         """
-        pass
+        idx = BasicHashTable.get_index(self.data_list, key)
+        self.data_list[idx] = (key, value)
 
     def list_all(self):
         """
         List all the keys.
         """
-        pass
+        list_of_keys = list()
 
-    def find(self, key):
-        """
-        Find the value associated with a key.
-        """
-        pass
+        for key_value in self.data_list:
+            if key_value is not None:
+                key, value = key_value
+                list_of_keys.append(key)
 
-    def update(self, key, value):
-        """
-        Change the value associated with a key.
-        """
-        pass
+        return list_of_keys
 
-    def list_all(self):
-        """
-        List all the keys.
-        """
-        pass
+    @staticmethod
+    def get_index(data_list, a_string):
+        result = sum([ord(a_character) for a_character in a_string])
+        return result % len(data_list)
 
-
-# Functions
-
-
-
-
-# Functions
-
-def get_index(data_list, a_string):
-    result = 0
-
-    for a_character in a_string:
-        a_number = ord(a_character)
-        result += a_number
-
-    list_index = result % MAX_HASH_TABLE_SIZE
-
-    return list_index
 
 # Main
 
 if __name__ == '__main__':
-    phone_numbers = {
-        'Aakash': '999198237',
-        'Hemanth': '999874376',
-        'Siddhant': '999419674'
-    }
-
-    print(phone_numbers)
-
+    # QUESTION 1: Create a Python list of size MAX_HASH_TABLE_SIZE, with all the
+    # values set to None.
     data_list = MAX_HASH_TABLE_SIZE*[None]
+    print(len(data_list) == 4098)
+    print(data_list[99] == None)
 
-    key, value = 'Aakash', '7878787878'
+    # QUESTION 2: Complete the get_index function below which implements the
+    # hashing algorithm described above.
+    print(BasicHashTable.get_index(data_list, '') == 0)
+    print(BasicHashTable.get_index(data_list, 'Aakash') == 585)
+    print(BasicHashTable.get_index(data_list, 'Don O Leary') == 941)
 
-    idx = get_index(data_list, key)
-    print(idx)
+    # QUESTION 3: Complete the hash table implementation below by following the
+    # instructions in the comments.
+    basic_table = BasicHashTable(max_size=1024)
+    print(len(basic_table.data_list) == 1024)
+
+    basic_table.insert('Aakash', '9999999999')
+    basic_table.insert('Hemanth', '8888888888')
+    print(basic_table.find('Hemanth') == '8888888888')
+
+    basic_table.update('Aakash', '7777777777')
+    print(basic_table.find('Aakash') == '7777777777')
+
+    print(basic_table.list_all() == ['Aakash', 'Hemanth'])
