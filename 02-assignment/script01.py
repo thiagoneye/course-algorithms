@@ -53,9 +53,25 @@ class BasicHashTable:
         return list_of_keys
 
     @staticmethod
-    def get_index(data_list, a_string):
-        result = sum([ord(a_character) for a_character in a_string])
+    def get_index(data_list, key):
+        result = sum([ord(a_character) for a_character in key])
         return result % len(data_list)
+
+    def get_valided_index(data_list, key):
+        idx = BasicHashTable.get_index(data_list, key)
+
+        while True:
+            key_value = data_list[idx]
+            if key_value is None:
+                return idx
+
+            k, v = key_value
+            if key == k:
+                return idx
+
+            idx += 1
+            if idx == len(data_list):
+                idx = 0
 
 
 # Main
@@ -86,3 +102,11 @@ if __name__ == '__main__':
     print(basic_table.find('Aakash') == '7777777777')
 
     print(basic_table.list_all() == ['Aakash', 'Hemanth'])
+
+    # QUESTION 4: Complete the function get_valid_index below by following the
+    # instructions in the comments.
+    data_list2 = [None] * MAX_HASH_TABLE_SIZE
+    print(BasicHashTable.get_valid_index(data_list2, 'listen') == 655)
+
+    data_list2[BasicHashTable.get_index(data_list2, 'listen')] = ('listen', 99)
+    print(get_valid_index(data_list2, 'silent') == 656)
