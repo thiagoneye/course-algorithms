@@ -57,7 +57,7 @@ class BasicHashTable:
         result = sum([ord(a_character) for a_character in key])
         return result % len(data_list)
 
-    def get_valided_index(data_list, key):
+    def get_valid_index(data_list, key):
         idx = BasicHashTable.get_index(data_list, key)
 
         while True:
@@ -109,4 +109,4 @@ if __name__ == '__main__':
     print(BasicHashTable.get_valid_index(data_list2, 'listen') == 655)
 
     data_list2[BasicHashTable.get_index(data_list2, 'listen')] = ('listen', 99)
-    print(get_valid_index(data_list2, 'silent') == 656)
+    print(BasicHashTable.get_valid_index(data_list2, 'silent') == 656)
