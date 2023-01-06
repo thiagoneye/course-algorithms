@@ -5,3 +5,5 @@ You're working on a new feature on Jovian called "Top Notebooks of the Week". Wr
 # List of Scripts
 
 1. Bubble Sort
+2. Insertion Sort
+3. Merge Sort
