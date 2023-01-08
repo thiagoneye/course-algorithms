@@ -17,3 +17,4 @@ It can be represented by the list `[6, 8, 19, 41, 38, 14]`.
 # List of Scripts
 
 1. Polynomial Multiplication (Brute Force)
+2. Polynomial Multiplication (Divide and Conquer)

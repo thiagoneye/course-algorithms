@@ -8,8 +8,8 @@ def multiply(poly1: list, poly2: list) -> list:
     m = len(poly1)
     n = len(poly2)
 
-    p = (m-1)*(n-1)
-    poly = p*[0]
+    p = (m-1)+(n-1)
+    poly = (p+1)*[0]
 
     for i in range(m):
         for j in range(n):
