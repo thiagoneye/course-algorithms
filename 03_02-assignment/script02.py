@@ -8,53 +8,53 @@ def split_polynomial(poly: list):
     mid = len(poly) // 2
     return poly[:mid], poly[mid:]
 
-def add_polynomial(poly1: list, poly2: list) -> list:
-    result = [0] * max(len(poly1), len(poly2))
+def add_polynomial(polya: list, polyb: list) -> list:
+    result = [0] * max(len(polya), len(polyb))
     for i in range(len(result)):
-        if i < len(poly1):
-            result[i] += poly1[i]
-        if i < len(poly2):
-            result[i] += poly2[i]
+        if i < len(polya):
+            result[i] += polya[i]
+        if i < len(polyb):
+            result[i] += polyb[i]
     return result
 
 def increase_exponent(poly, n):
     return [0] * n + poly
 
-def multiply(poly1: list, poly2: list) -> list:
-    if len(poly1) == 1:
-        return [poly1[0] * value for value in poly2]
+def multiply(polya: list, polyb: list) -> list:
+    if len(polya) == 1:
+        return [polya[0] * value for value in polyb]
 
-    if len(poly2) == 1:
-        return [poly2[0] * value for value in poly1]
+    if len(polyb) == 1:
+        return [polyb[0] * value for value in polya]
 
-    polya, polyb = split_polynomial(poly1)
-    polyc, polyd = split_polynomial(poly2)
+    a0, a1 = split_polynomial(polya)
+    b0, b1 = split_polynomial(polyb)
 
-    ac = multiply(polya, polyc)
-    ad = multiply(polya, polyd)
-    bc = multiply(polyb, polyc)
-    bd = multiply(polyb, polyd)
+    a0b0 = multiply(a0, b0)
+    a0b1 = multiply(a0, b1)
+    a1b0 = multiply(a1, b0)
+    a1b1 = multiply(a1, b1)
 
-    m = len(poly1)
-    n = len(poly2)
+    m = len(polya)
+    n = len(polyb)
 
-    ad = increase_exponent(ad, n // 2)
-    bc = increase_exponent(bc, m // 2)
-    bd = increase_exponent(bd, (m // 2) + (n // 2))
+    a0b1 = increase_exponent(a0b1, n // 2)
+    a1b0 = increase_exponent(a1b0, m // 2)
+    a1b1 = increase_exponent(a1b1, (m // 2) + (n // 2))
 
-    result = add_polynomial(ac, ad)
-    result = add_polynomial(result, bc)
-    result = add_polynomial(result, bd)
+    result = add_polynomial(a0b0, a0b1)
+    result = add_polynomial(result, a1b0)
+    result = add_polynomial(result, a1b1)
 
     return result
 
 # Main
 
 if __name__ == '__main__':
-    poly1 = [2, 5, 3, 1, -1]
-    poly2 = [1, 2, 2, 3, 6]
+    polya = [2, 5, 3, 1, -1]
+    polyb = [1, 2, 2, 3, 6]
 
-    poly = multiply(poly1, poly2)
+    poly = multiply(polya, polyb)
     print(poly)
 
     poly1 = [2, 0, 5, 7]
