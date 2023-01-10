@@ -1,5 +1,5 @@
 """
-Longest Common Subsequence
+Longest Common Subsequence (Recursive)
 """
 
 # Functions
