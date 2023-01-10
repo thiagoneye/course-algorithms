@@ -9,3 +9,4 @@ A "subsequence" is a sequence obtained by deleting zero or more elements from an
 # List of Scripts
 
 1. Longest Common Subsequence (Recursive)
+2. Longest Common Subsequence (Dynamic Programming)
