@@ -15,7 +15,6 @@ All files were based on the course from the cited website.
 3. Sorting Algorithms and Divide & Conquer
 4. Recursion and Dynamic Programming
 5. Graph Algorithms (BFS, DFS & Shortest Paths)
-6. Python Interview Questions, Tips & Advice
 
 ## Others
 
