@@ -18,3 +18,4 @@ Given n elements, each of which has a weight and a profit, determine the maximum
 2. Longest Common Subsequence (Memoization)
 3. Longest Common Subsequence (Dynamic Programming)
 4. Knapsack Problem (Recursive)
+5. Knapsack Problem (Dynamic Programming)
