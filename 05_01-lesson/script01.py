@@ -13,7 +13,10 @@ class Graph:
             self.data[n2].append(n1)
 
     def __repr__(self):
-        ["{}: {}".format(n, neighbors) for n, neighbors in enumerate(self.data)]
+        return "\n".join(["{}: {}".format(n, neighbors) for n, neighbors in enumerate(self.data)])
+
+    def __str__(self):
+        return self.__repr__()
 
 
 # Main
@@ -24,6 +27,4 @@ if __name__ == '__main__':
 
     graph = Graph(num_nodes, edges)
 
-    print(graph.data)
-
-    [print("{}: {}".format(n, neighbors)) for n, neighbors in enumerate(graph.data)]
+    print(graph)
