@@ -12,6 +12,7 @@ from script01 import Graph
 def bfs(graph, root):
     queue = []
     discovered = [False] * len(graph.data)
+    parent = [None] * len(graph.data)
     distance = [None] * len(graph.data)
 
     queue.append(root)
@@ -27,11 +28,12 @@ def bfs(graph, root):
         # Check all edges of current
         for node in graph.data[current]:
             if not discovered[node]:
-                distance[node] = 1 + distance[current]
                 queue.append(node)
                 discovered[node] = True
+                parent[node] = current
+                distance[node] = 1 + distance[current]
 
-    return queue, distance
+    return queue, parent, distance
 
 
 # Main
@@ -44,8 +46,7 @@ if __name__ == '__main__':
     print('The Graph:')
     print(graph)
 
-    queue, distance = bfs(graph, 3)
-    print('\nThe BFS:')
-    print(queue)
-    print('\nThe distance:')
-    print(distance)
+    queue, parent, distance = bfs(graph, 3)
+    print(f'\nThe BFS: {queue}')
+    print(f'The parent: {parent}')
+    print(f'The distance: {distance}')
