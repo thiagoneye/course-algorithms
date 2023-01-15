@@ -37,7 +37,7 @@ if __name__ == '__main__':
     print(graph)
 
     graph.add_edges([(2, 3), (3, 4)])
-    print('\n', graph)
+    print(f'\n{graph}')
 
     graph.remove_edges([(2, 3), (3, 4)])
-    print('\n', graph)
+    print(f'\n{graph}')
