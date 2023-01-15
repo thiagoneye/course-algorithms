@@ -5,3 +5,4 @@
 3. Breadth-First Search
 4. Deph-First Search
 5. Weighted and Directed Graphs
+6. Shortest Paths

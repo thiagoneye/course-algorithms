@@ -2,7 +2,7 @@
 Weighted and Directed Graphs
 """
 
-# Functions
+# Classes
 
 class Graph:
     def __init__(self, num_nodes, edges, weighted=False, directed=False):
