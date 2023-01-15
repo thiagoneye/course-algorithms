@@ -39,27 +39,30 @@ def pick_next_node(distance, visited):
     return min_node
 
 
-def shortest_path(graph, source, target):
+def shortest_path(graph, source, dest):
     visited = [False] * graph.num_nodes
     distance = [float('inf')] * graph.num_nodes
+    parent = [None] * len(graph.data)
     queue = []
-
-    distance[source] = 0
-    queue.append(source)
     idx = 0
 
-    while idx < len(queue) and not visited[target]:
-        current = queue[idx]
-        visited[current] = True
-        idx += 1
+    visited[source] = True
+    distance[source] = 0
+    queue.append(source)
 
+
+    while idx < len(queue) and not visited[dest]:
+        current = queue[idx]
         update_distances(graph, current, distance)
         next_node = pick_next_node(distance, visited)
 
-        if next_node:
+        if next_node is not None:
+            visited[next_node] = True
             queue.append(next_node)
 
-    return distance[target]
+        idx += 1
+
+    return distance[dest], distance, parent
 
 
 # Main
@@ -70,3 +73,9 @@ if __name__ == '__main__':
     graph = Graph(num_nodes, edges, weighted=True, directed=True)
 
     print(shortest_path(graph, 0, 5))
+
+    num_nodes = 9
+    edges = [(0, 1, 3), (0, 3, 2), (0, 8, 4), (1, 7, 4), (2, 3, 6), (2, 5, 1), (2, 7, 2), (3, 4, 1), (4, 8, 8), (5, 6, 8)]
+    graph = Graph(num_nodes, edges, weighted=True)
+
+    print(shortest_path(graph, 8, 6))
