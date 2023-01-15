@@ -21,7 +21,7 @@ class Graph:
             self.data[n2].remove(n1)
 
     def __repr__(self):
-        return "\n".join(["{}: {}".format(n, neighbors) for n, neighbors in enumerate(self.data)])
+        return '\n'.join(['{}: {}'.format(n, neighbors) for n, neighbors in enumerate(self.data)])
 
     def __str__(self):
         return self.__repr__()
