@@ -18,4 +18,4 @@ All files were based on the course from the cited website.
 
 ## Others
 
-See also the repositories [book-algorithms](https://github.com/thiagoneye/book-algorithms).
+See also the repositories [master-algorithms](https://github.com/thiagoneye/master-algorithms).
